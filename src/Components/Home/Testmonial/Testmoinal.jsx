@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
-
+import Image from "next/image";
+import Me from '@/Assets/me.jpg';
 const TestimonialsAndFAQs = () => {
   const [activeFaq, setActiveFaq] = useState(null);
 
@@ -13,14 +14,14 @@ const TestimonialsAndFAQs = () => {
     {
       name: "Esther Hills",
       designation: "Lead Internet Technician",
-      image: "/images/esther.jpg", // Replace with the correct path
+      image: Me, // Replace with the correct path
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
     },
     {
       name: "Ethel Johnston",
       designation: "Human Resources Director",
-      image: "/images/ethel.jpg", // Replace with the correct path
+      image: Me, // Replace with the correct path
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit    interdum, ac aliquet odio mattis.",
     },
@@ -47,8 +48,10 @@ const faqs = [
             className="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 transform hover:scale-105 transition-transform"
           >
             <div className="flex-shrink-0">
-              <img
+              <Image
                 src={testimonial.image}
+                width={70}
+                height={70}
                 alt={testimonial.name}
                 className="h-16 w-16 rounded-full object-cover"
               />

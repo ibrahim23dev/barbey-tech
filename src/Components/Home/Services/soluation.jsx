@@ -6,6 +6,7 @@ import Tech3 from "@/Assets/Tech/Tech9.png";
 import Tech4 from "@/Assets/Tech/Tech10.png";
 import Tech5 from "@/Assets/Tech/Tech11.png";
 import Tech6 from "@/Assets/Tech/Tech12.png";
+
 const solutions = [
   {
     title: "Hospital Management System",
@@ -37,32 +38,32 @@ export default function Home() {
   return (
     <div className="bg-gray-100 min-h-screen py-10">
       {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800">
+      <div className="text-center mb-12 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
           Smart, Preconfigured,{" "}
           <span className="text-purple-500">Dynamic Business Solutions</span>
         </h1>
       </div>
 
       {/* Grid Layout */}
-      <div className="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {solutions.map((solution, index) => (
           <div
             key={index}
-            className="group relative p-6 bg-white rounded-lg shadow-lg border-2 border-transparent transition-transform transform hover:scale-105 hover:border-purple-500"
+            className="group relative flex flex-col items-center p-6 bg-white rounded-lg shadow-lg border-2 border-transparent transition-transform transform hover:scale-105 hover:border-purple-500"
           >
             {/* Image */}
             <div className="w-full flex justify-center">
               <Image
                 src={solution.image}
                 alt={solution.title}
-                width={120}
-                height={120}
+                width={300}
+                height={200}
                 className="transition-transform duration-300 group-hover:scale-110"
               />
             </div>
             {/* Title */}
-            <h2 className="text-center text-xl font-semibold text-gray-700 mt-4">
+            <h2 className="text-center text-lg sm:text-xl font-semibold text-gray-700 mt-4">
               {solution.title}
             </h2>
             {/* Button */}
@@ -82,9 +83,5 @@ export default function Home() {
         </button>
       </div>
     </div>
-    
   );
 }
-
-
-

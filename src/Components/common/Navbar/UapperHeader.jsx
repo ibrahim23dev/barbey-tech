@@ -9,6 +9,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const UpperHeader = () => {
+  // Randomly generated data
+  const randomEmail = "user" + Math.floor(Math.random() * 1000) + "@example.com";
+  const randomPhone = "+1" + Math.floor(Math.random() * 1000000000);
+  const randomLocation = "Street " + (Math.floor(Math.random() * 100) + 1) + ", City " + (Math.floor(Math.random() * 10) + 1) + ", Country";
+  
   // Slider settings
   const settings = {
     dots: false,
@@ -38,19 +43,19 @@ const UpperHeader = () => {
     ],
   };
 
-  // Data for the header items
+  // Data for the header items with randomized content
   const headerItems = [
     {
       icon: <MdMarkEmailUnread className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: "user@barbeytech.com",
+      text: randomEmail,
     },
     {
       icon: <IoLogoWhatsapp className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: "+123456789",
+      text: randomPhone,
     },
     {
       icon: <FaLocationDot className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: "1234 Street Name, City, Country",
+      text: randomLocation,
     },
     {
       icon: <MdOutlineAccessTimeFilled className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
@@ -64,16 +69,21 @@ const UpperHeader = () => {
 
   return (
     <div className="bg-white text-gray-800 py-3 px-4 flex justify-center items-center">
-      <div className="w-full max-w-[1200px]">
+      <div className="w-full ml-10 max-w-[1000px]">
         <Slider {...settings}>
           {headerItems.map((item, index) => (
-            <div key={index} className="flex justify-center items-center px-2">
+            <div key={index} className="flex justify-center items-center px-2 relative">
               <div className="flex items-center gap-4 text-center">
                 <span className="flex items-center gap-2">
                   {item.icon}
                   <span className="text-sm md:text-lg font-medium">{item.text}</span>
                 </span>
+                {/* Separator / Bearer */}
+              {index < headerItems.length && (
+                <div className="absolute inset-y-0 right-0 w-[1px] bg-gray-300" />
+              )}
               </div>
+              
             </div>
           ))}
         </Slider>

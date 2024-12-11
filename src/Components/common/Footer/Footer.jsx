@@ -1,26 +1,34 @@
+import Image from "next/image";
+import GooglePlay from "@/Assets/Googleplay.png";
+import AppStore from "@/Assets/Appstore.png";
+
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-purple-500 to-blue-500 text-white py-10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center lg:text-left">
         {/* Information Section */}
         <div>
           <h3 className="text-lg font-bold mb-4">Information</h3>
-          <p>
+          <p className="leading-relaxed">
             Barbey Tech Consultancy is a leading travel technology partner who
             delivers innovative solutions for the travel industry. Our
             comprehensive software products empower worldwide travel businesses
             to automate business processes and enhance their customer service.
           </p>
-          <div className="flex justify-center md:justify-start gap-4 mt-4">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Google_Play_Store_badge_EN.svg"
+          <div className="flex justify-center lg:justify-start gap-4 mt-6">
+            <Image
+              src={GooglePlay}
+              width={150}
+              height={50}
               alt="Google Play"
-              className="h-10 cursor-pointer"
+              className="h-10 cursor-pointer object-contain"
             />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Download_on_the_App_Store_Badge.svg"
+            <Image
+              src={AppStore}
+              width={150}
+              height={50}
               alt="App Store"
-              className="h-10 cursor-pointer"
+              className="h-10 cursor-pointer object-contain"
             />
           </div>
         </div>
@@ -55,32 +63,41 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white mt-10 pt-5">
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          <p className="text-sm">© 2024 Barbey Tech. All rights reserved.</p>
-          <div className="flex items-center gap-4">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-center lg:text-left">
+            © 2024 Barbey Tech. All rights reserved.
+          </p>
+          <div className="flex  justify-center gap-2">
+            <Image
+              src={GooglePlay}
+              width={100}
+              height={50}
               alt="Visa"
-              className="h-8"
+              className="h-8 object-contain"
             />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+            <Image
+              src={GooglePlay}
+              width={100}
+              height={50}
               alt="PayPal"
-              className="h-8"
+              className="h-8 object-contain"
             />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg"
+            <Image
+              src={GooglePlay}
+              width={100}
+              height={50}
               alt="MasterCard"
-              className="h-8"
+              className="h-8 object-contain"
             />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/e/e7/American_Express_logo_%282018%29.svg"
-              alt="American Express"
-              className="h-8"
+            <Image
+              src={GooglePlay}
+              width={100}
+              height={50}
+              className="h-8 object-contain"
             />
           </div>
         </div>
-        <div className="flex justify-center gap-4 mt-4">
+        <div className="container mx-auto px-4 flex justify-center gap-4 mt-4">
           <a href="#" className="text-sm hover:underline">
             Terms
           </a>

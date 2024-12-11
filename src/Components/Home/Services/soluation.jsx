@@ -56,7 +56,7 @@ export default function Home() {
             <div className="w-full flex justify-center">
               <Image
                 src={solution.image}
-                alt={solution.title}
+                alt="hello"
                 width={300}
                 height={200}
                 className="transition-transform duration-300 group-hover:scale-110"

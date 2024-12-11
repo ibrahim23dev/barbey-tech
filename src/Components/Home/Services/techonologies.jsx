@@ -12,27 +12,27 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg min-h-screen font-sans">
+    <div className="bg-gray-50 min-h-screen font-sans">
       {/* Header Section */}
       <div className="container mx-auto px-4 py-12 text-center">
         <h1 className="text-2xl sm:text-4xl font-bold text-gray-800">
           Agile Software Development
         </h1>
-        <p className="text-sm sm:text-lg text-gray-600 mt-2">
+        <p className="text-sm sm:text-lg text-gray-600 mt-2 max-w-2xl mx-auto">
           Our processes are proven, the capabilities are there, and our tools are top-notch.
         </p>
       </div>
 
       {/* Web and Mobile Tech Stack */}
-      <div className="container mx-auto grid sm:grid-cols-2 gap-8 mb-16 px-4">
+      <div className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-2 gap-8 mb-16 px-4">
         {/* Web Tech Stack */}
-        <div className="p-4 sm:p-8">
+        <div className=" p-6 sm:p-8 hover:shadow-lg transition-shadow">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Web</h2>
           <Image
             src={Web}
             alt="Web illustration"
-            className="mb-4 rounded"
-            width={500}
+            className="mb-4  object-cover"
+            width={400}
             height={300}
             layout="responsive"
           />
@@ -46,14 +46,14 @@ export default function Home() {
         </div>
 
         {/* Mobile Tech Stack */}
-        <div className="p-4 sm:p-8">
+        <div className=" p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Mobile</h2>
           <Image
             src={Mobile}
             alt="Mobile illustration"
-            className="mb-4 rounded"
-            width={500}
-            height={300}
+            className="mb-4  object-cover"
+            width={250}
+            height={200}
             layout="responsive"
           />
           <h3 className="text-lg font-semibold text-gray-700 mb-2">Tech Stack</h3>
@@ -67,25 +67,25 @@ export default function Home() {
 
       {/* Testing Section */}
       <div className="container mx-auto text-center px-4">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Testing</h2>
-        <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-8">Testing</h2>
+        <div className="flex flex-wrap justify-center items-center gap-6">
           <Image
             alt="Testing"
             src={Testing}
-            className="rounded"
+            className="rounded-lg object-cover"
             width={800}
             height={400}
             layout="responsive"
           />
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-4">
-          <div className="bg-indigo-200 rounded-lg p-4 w-24 h-24 flex justify-center items-center">
+        <div className="flex flex-wrap justify-center items-center gap-4 mt-8">
+          <div className="bg-indigo-100 rounded-lg p-4 w-28 h-28 flex justify-center items-center shadow-md">
             <span className="text-indigo-700 font-semibold text-sm">Unit Tests</span>
           </div>
-          <div className="bg-indigo-200 rounded-lg p-4 w-24 h-24 flex justify-center items-center">
+          <div className="bg-indigo-100 rounded-lg p-4 w-28 h-28 flex justify-center items-center shadow-md">
             <span className="text-indigo-700 font-semibold text-sm">Integration</span>
           </div>
-          <div className="bg-indigo-200 rounded-lg p-4 w-24 h-24 flex justify-center items-center">
+          <div className="bg-indigo-100 rounded-lg p-4 w-28 h-28 flex justify-center items-center shadow-md">
             <span className="text-indigo-700 font-semibold text-sm">End-to-End</span>
           </div>
         </div>
@@ -95,9 +95,9 @@ export default function Home() {
       <div className="container mx-auto text-center mb-16 px-4">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">DevOps</h2>
         <div className="flex flex-wrap justify-center items-center gap-8">
-          <Image src={Github} width={100} height={100} alt="GitHub" className="rounded-full" />
-          <Image src={Gitlab} width={100} height={100} alt="GitLab" className="rounded-full" />
-          <Image src={Bitbucket} width={100} height={100} alt="Bitbucket" className="rounded-full" />
+          <Image src={Github} width={80} height={80} alt="GitHub" className="rounded-full" />
+          <Image src={Gitlab} width={80} height={80} alt="GitLab" className="rounded-full" />
+          <Image src={Bitbucket} width={80} height={80} alt="Bitbucket" className="rounded-full" />
         </div>
       </div>
 
@@ -105,26 +105,26 @@ export default function Home() {
       <div className="container mx-auto text-center mb-16 px-4">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Deployment</h2>
         <div className="flex flex-wrap justify-center items-center gap-8">
-          <Image src={Aws} width={100} height={100} alt="AWS" className="rounded-full" />
-          <Image src={Cloud} width={100} height={100} alt="DigitalOcean" className="rounded-full" />
-          <Image src={Othercloud} width={100} height={100} alt="Cloud Services" className="rounded-full" />
+          <Image src={Aws} width={80} height={80} alt="AWS" className="rounded-full" />
+          <Image src={Cloud} width={80} height={80} alt="DigitalOcean" className="rounded-full" />
+          <Image src={Othercloud} width={80} height={80} alt="Cloud Services" className="rounded-full" />
         </div>
       </div>
 
       {/* Solutions Section */}
-      <div className="container mx-auto grid sm:grid-cols-2 gap-8 px-4">
-        <div className="bg-white shadow-lg rounded-lg p-8">
+      <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-8 px-4">
+        <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 hover:shadow-xl">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Web Solutions</h2>
-          <ul className="text-gray-600 space-y-1">
+          <ul className="text-gray-600 space-y-2">
             <li>eCommerce</li>
             <li>Web Development</li>
             <li>API Integration</li>
             <li>Real-time Apps</li>
           </ul>
         </div>
-        <div className="bg-white shadow-lg rounded-lg p-8">
+        <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 hover:shadow-xl">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Mobile Solutions</h2>
-          <ul className="text-gray-600 space-y-1">
+          <ul className="text-gray-600 space-y-2">
             <li>Booking Apps</li>
             <li>Utility Apps</li>
             <li>Financial Apps</li>

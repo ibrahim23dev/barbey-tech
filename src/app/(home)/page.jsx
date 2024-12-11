@@ -18,9 +18,9 @@ import Banner3 from '@/Assets/Banner/Banner3.jpeg';
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    { src: Banner1, title: "Welcome to Barbey Tech", description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Leo eget suspendisse sollicitudin consectetur." },
-    { src: Banner2, title: "Smart Solutions for a Connected World", description: "Aliquet in id id ullamcorper pulvinar dolor amet. Augue pretium amet platea eu sit sit." },
-    { src: Banner3, title: "Innovative Technology, Seamless Experience", description: "Tristique etiam quis bibendum duis mauris dictum molestie enim ut. Elementum tempus adipiscing nulla." }
+    { src: Banner1, alt:"Hello", title: "Welcome to Barbey Tech", description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Leo eget suspendisse sollicitudin consectetur." },
+    { src: Banner2, alt:"Hello", title: "Smart Solutions for a Connected World", description: "Aliquet in id id ullamcorper pulvinar dolor amet. Augue pretium amet platea eu sit sit." },
+    { src: Banner3, alt:"Hello", title: "Innovative Technology, Seamless Experience", description: "Tristique etiam quis bibendum duis mauris dictum molestie enim ut. Elementum tempus adipiscing nulla." }
   ];
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Home = () => {
         {/* Banner Image */}
         <Image
           src={images[currentImage].src}
-          alt={`Banner ${currentImage + 1}`}
+          alt="Alhamdullah"
           layout="fill"
           objectFit="cover"
           className="transition-transform duration-700"

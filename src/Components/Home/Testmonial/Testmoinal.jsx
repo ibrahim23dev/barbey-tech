@@ -52,7 +52,7 @@ const faqs = [
                 src={testimonial.image}
                 width={70}
                 height={70}
-                alt={testimonial.name}
+                alt="hello"
                 className="h-16 w-16 rounded-full object-cover"
               />
             </div>

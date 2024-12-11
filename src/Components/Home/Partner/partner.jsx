@@ -1,32 +1,35 @@
 import React from "react";
 import Image from "next/image";
-import Microsoft from '@/Assets/Tech/microsoft.png'
-import ucb from '@/Assets/Tech/Ucb.png'
-import Oracel from '@/Assets/Tech/oracle_logo.webp'
-import Cisco from '@/Assets/Tech/ciscologo.png'
-import talitok from '@/Assets/Tech/talitoklogo.png'
-import Dbbl from '@/Assets/Tech/Dbbl.png'
+import Microsoft from '@/Assets/Tech/microsoft.png';
+import Ucb from '@/Assets/Tech/Ucb.png';
+import Oracle from '@/Assets/Tech/oracle_logo.webp';
+import Cisco from '@/Assets/Tech/ciscologo.png';
+import Talitok from '@/Assets/Tech/talitoklogo.png';
+import Dbbl from '@/Assets/Tech/Dbbl.png';
+
 function PartnerSection() {
   const partners = [
     { name: "Microsoft Gold Partner", logo: Microsoft },
-    { name: "SAP Gold Partner", logo: ucb },
-    { name: "Dell", logo: Oracel },
+    { name: "SAP Gold Partner", logo: Ucb },
+    { name: "Dell", logo: Oracle },
     { name: "Oracle", logo: Cisco },
-    { name: "VMware", logo: talitok },
+    { name: "VMware", logo: Talitok },
     { name: "Fortinet", logo: Dbbl },
-    
   ];
 
   return (
-    <section className="Partnerbg bg-red-50 py-12">
-      <div className="container mx-auto text-center">
+    <section className="Partnerbg bg-gray-50 py-12">
+      <div className="container mx-auto px-4 text-center">
+        {/* Section Header */}
         <h2 className="text-3xl font-semibold text-gray-800">
           Client Partners of <span className="text-purple-600">Our Company</span>
         </h2>
-        <p className="text-gray-600 mt-4">
+        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
           Collaborating with industry leaders to deliver the best solutions.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+
+        {/* Partner Logos Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
           {partners.map((partner, index) => (
             <div
               key={index}
@@ -36,8 +39,8 @@ function PartnerSection() {
                 src={partner.logo}
                 width={220}
                 height={100}
-                alt={partner.name}
-                className="h-12 object-contain"
+                alt="hello"
+                className="h-12 md:h-16 object-contain"
               />
             </div>
           ))}

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import logo from "@/Assets/logo.png";
 import Image from "next/image";
 import { FaRegUser } from "react-icons/fa";
-import { HiMenuAlt3, HiX } from "react-icons/hi"; // React icons for hamburger menu
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for toggling the menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="bg-gradient-to-r from-[#AD37E3] to-[#7581F7] text-white sticky top-0 z-50 shadow-md">
@@ -16,28 +16,35 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 text-sm">
+        <nav className="hidden md:flex gap-3 items-center text-sm">
           <a href="#" className="hover:underline">
             Services
           </a>
+          <span>|</span>
           <a href="#" className="hover:underline">
             We Do
           </a>
+          <span>|</span>
           <a href="#" className="hover:underline">
             Product
           </a>
+          <span>|</span>
           <a href="#" className="hover:underline">
             Portfolio
           </a>
+          <span>|</span>
           <a href="#" className="hover:underline">
             Partnership Program
           </a>
+          <span>|</span>
           <a href="#" className="hover:underline">
             Hire Developer
           </a>
+          <span>|</span>
           <a href="#" className="hover:underline">
             Contact Us
           </a>
+          <span>|</span>
           <a href="#" className="hover:underline flex items-center">
             <FaRegUser className="text-rose-50 w-6 h-6" />
           </a>

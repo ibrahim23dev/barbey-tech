@@ -36,7 +36,7 @@ const solutions = [
 
 export default function Home() {
   return (
-    <div className="bg-gray-100 min-h-screen py-10">
+    <div className="bg-gray-100 min-h-screen">
       {/* Header */}
       <div className="text-center mb-12 px-4">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
@@ -46,7 +46,7 @@ export default function Home() {
       </div>
 
       {/* Grid Layout */}
-      <div className="container mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="container mx-auto mb-8 px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {solutions.map((solution, index) => (
           <div
             key={index}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
@@ -9,11 +9,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const UpperHeader = () => {
-  // Randomly generated data
-  const randomEmail = "user" + Math.floor(Math.random() * 1000) + "@example.com";
-  const randomPhone = "+1" + Math.floor(Math.random() * 1000000000);
-  const randomLocation = "Street " + (Math.floor(Math.random() * 100) + 1) + ", City " + (Math.floor(Math.random() * 10) + 1) + ", Country";
-  
+  const [randomData, setRandomData] = useState({
+    email: "user@example.com",
+    phone: "+1000000000",
+    location: "Default Street, Default City, Default Country",
+  });
+
+  // Generate random data client-side
+  useEffect(() => {
+    const randomEmail = "user" + Math.floor(Math.random() * 1000) + "@example.com";
+    const randomPhone = "+1" + Math.floor(Math.random() * 1000000000);
+    const randomLocation =
+      "Street " +
+      (Math.floor(Math.random() * 100) + 1) +
+      ", City " +
+      (Math.floor(Math.random() * 10) + 1) +
+      ", Country";
+
+    setRandomData({
+      email: randomEmail,
+      phone: randomPhone,
+      location: randomLocation,
+    });
+  }, []);
+
   // Slider settings
   const settings = {
     dots: false,
@@ -43,19 +62,19 @@ const UpperHeader = () => {
     ],
   };
 
-  // Data for the header items with randomized content
+  // Data for the header items
   const headerItems = [
     {
       icon: <MdMarkEmailUnread className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: randomEmail,
+      text: randomData.email,
     },
     {
       icon: <IoLogoWhatsapp className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: randomPhone,
+      text: randomData.phone,
     },
     {
       icon: <FaLocationDot className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
-      text: randomLocation,
+      text: randomData.location,
     },
     {
       icon: <MdOutlineAccessTimeFilled className="w-6 h-6 md:w-8 md:h-8 text-[#9747FF]" />,
@@ -78,12 +97,11 @@ const UpperHeader = () => {
                   {item.icon}
                   <span className="text-sm md:text-lg font-medium">{item.text}</span>
                 </span>
-                {/* Separator / Bearer */}
-              {index < headerItems.length && (
-                <div className="absolute inset-y-0 right-0 w-[1px] bg-gray-300" />
-              )}
+                {/* Separator */}
+                {index < headerItems.length - 1 && (
+                  <div className="absolute inset-y-0 right-0 w-[1px] bg-gray-300" />
+                )}
               </div>
-              
             </div>
           ))}
         </Slider>

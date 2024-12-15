@@ -24,17 +24,14 @@ export default function Home() {
       </div>
 
       {/* Web and Mobile Tech Stack */}
-      <div className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-2 gap-8 mb-16 px-4">
+      <div className="container mx-auto px-16 grid sm:grid-cols-2 lg:grid-cols-2 gap-8 mb-16 ">
         {/* Web Tech Stack */}
-        <div className=" p-6 sm:p-8 hover:shadow-lg transition-shadow">
+        <div className=" p-6 sm:p-8 transition-shadow">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Web</h2>
           <Image
             src={Web}
             alt="Web illustration"
-            className="mb-4  object-cover"
-            width={400}
-            height={300}
-            layout="responsive"
+           
           />
           <h3 className="text-lg font-semibold text-gray-700 mb-2">Tech Stack</h3>
           <ul className="text-gray-600 space-y-1">
@@ -46,15 +43,11 @@ export default function Home() {
         </div>
 
         {/* Mobile Tech Stack */}
-        <div className=" p-6 sm:p-8">
+        <div className=" p-6 px-10 sm:p-8">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Mobile</h2>
           <Image
             src={Mobile}
-            alt="Mobile illustration"
-            className="mb-4  object-cover"
-            width={250}
-            height={200}
-            layout="responsive"
+            
           />
           <h3 className="text-lg font-semibold text-gray-700 mb-2">Tech Stack</h3>
           <ul className="text-gray-600 space-y-1">

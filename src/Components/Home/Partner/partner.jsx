@@ -15,6 +15,9 @@ function PartnerSection() {
     { name: "Oracle", logo: Cisco },
     { name: "VMware", logo: Talitok },
     { name: "Fortinet", logo: Dbbl },
+    { name: "Oracle", logo: Cisco },
+    { name: "SAP Gold Partner", logo: Ucb },
+
   ];
 
   return (

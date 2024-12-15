@@ -1,4 +1,6 @@
 // pages/index.js
+"use client";
+
 import Image from "next/image";
 import Tech1 from "@/Assets/Tech/tech1.png";
 import Tech2 from "@/Assets/Tech/tech2.png";
@@ -10,78 +12,69 @@ import Tech6 from "@/Assets/Tech/tech6.png";
 const solutions = [
   {
     title: "Hospital Management System",
+    description: "Manage hospital operations efficiently with our HMS solution.",
     image: Tech1,
   },
   {
     title: "Inventory Management System",
+    description: "Optimize inventory with our modern IMS tools.",
     image: Tech2,
   },
   {
     title: "School Management System",
+    description: "Streamline school administration with our SMS solution.",
     image: Tech3,
   },
   {
     title: "Stock Management System",
+    description: "Track and manage stock accurately with ease.",
     image: Tech4,
   },
   {
     title: "Hotel & Restaurant Management",
+    description: "Simplify hotel operations with our H&R solutions.",
     image: Tech5,
   },
   {
     title: "Research Solution",
+    description: "Empower research with our intelligent tools.",
     image: Tech6,
   },
 ];
 
-export default function Home() {
+function Services() {
   return (
-    <div className="bg-gray-100 min-h-screen py-10">
-      {/* Header */}
-      <div className="text-center mb-12 px-4">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
-          Smart, Preconfigured,{" "}
-          <span className="text-purple-500">Dynamic Business Solutions</span>
-        </h1>
-      </div>
-
-      {/* Grid Layout */}
-      <div className="container mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="bg-gray-100 min-h-screen px-10 pt-10">
+      <h1 className="text-2xl text-center mb-10 sm:text-3xl md:text-4xl font-bold text-gray-800">
+        Empowering Efficiency,{" "}
+        <span className="text-purple-500">One Click at a Time</span>
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 md:px-16">
         {solutions.map((solution, index) => (
           <div
             key={index}
-            className="group relative flex flex-col items-center p-6 bg-white rounded-lg shadow-lg border-2 border-transparent transition-transform transform hover:scale-105 hover:border-purple-500"
+            className="relative group h-[300px] bg-white rounded-lg border border-gray-200 shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105"
           >
-            {/* Image */}
-            <div className="w-full flex justify-center">
-              <Image
-                src={solution.image}
-                alt="hello"
-                width={300}
-                height={200}
-                className="transition-transform duration-300 group-hover:scale-110"
-              />
-            </div>
-            {/* Title */}
-            <h2 className="text-center text-lg sm:text-xl font-semibold text-gray-700 mt-4">
-              {solution.title}
-            </h2>
-            {/* Button */}
-            <div className="text-center mt-4">
-              <button className="px-4 py-2 bg-purple-500 text-white rounded-full shadow-lg hover:bg-purple-600 transition">
-                Details
-              </button>
+            <div className="p-6 text-center">
+              <div className="flex justify-center mb-4">
+                <Image
+                  src={solution.image}
+                  alt={solution.title}
+                  width={190}
+                  height={190}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                {solution.title}
+              </h3>
+              <p className="text-sm text-gray-600">{solution.description}</p>
             </div>
           </div>
         ))}
       </div>
-
-      {/* See More Button */}
-      <div className="text-center mt-10">
-        <button className="px-6 py-3 bg-purple-500 text-white text-lg rounded-full shadow-lg hover:bg-purple-600 transition">
-          See More
-        </button>
-      </div>
     </div>
   );
 }
+
+export default Services;
